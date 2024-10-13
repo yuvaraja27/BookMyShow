@@ -1,6 +1,7 @@
 package dev.manohar.ticketbooking.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import java.util.List;
 public class City extends BaseModel{
     private String cityName;
     @OneToMany
+    @JoinColumn(name = "city_id")
     private List<Theatre> theatres;
 
 }
